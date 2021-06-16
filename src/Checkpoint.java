@@ -30,6 +30,35 @@ public class Checkpoint {
 		 * 5. Print only the cars with "toyota" in the name.
 		 */
 		
+		ArrayList<CarMPGEntry> data = readCarMPGEntryDataFromFile();
+	
+		
+		System.out.println("=== Whole List ===");
+		data.stream().forEach(element -> {
+			System.out.println(element.toString());
+		});
+		
+		System.out.print("\n\n=== MPG ===\n");
+		
+		data.stream().forEach(element -> {
+			System.out.print(element.mpg + " ");
+		});
+		
+		System.out.print("\n\n=== Car Names ===\n");
+		
+		data.stream().map(x -> x.carName).sorted().forEach(element -> {
+			System.out.println(element + " ");
+		});
+		
+		System.out.print("\n\n=== No Cylinder ===\n");
+		data.stream().filter(x -> x.cylinders != 8).forEach(element -> {
+			System.out.println(element.toString());
+		});
+		
+		System.out.print("\n\n=== Toyotas ===\n");
+		data.stream().filter(x -> x.carName.contains("toyota")).forEach(element -> {
+			System.out.println(element.toString());
+		});;
 		
 	}
 	
