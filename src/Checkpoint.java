@@ -35,29 +35,29 @@ public class Checkpoint {
 		
 		System.out.println("=== Whole List ===");
 		data.stream().forEach(element -> {
-			System.out.println(element.toString());
+			System.out.println(element.carName);
 		});
 		
 		System.out.print("\n\n=== MPG ===\n");
 		
 		data.stream().forEach(element -> {
-			System.out.print(element.mpg + " ");
+			System.out.println(element.mpg);
 		});
 		
 		System.out.print("\n\n=== Car Names ===\n");
 		
 		data.stream().map(x -> x.carName).sorted().forEach(element -> {
-			System.out.println(element + " ");
+			System.out.println(element);
 		});
 		
 		System.out.print("\n\n=== No Cylinder ===\n");
 		data.stream().filter(x -> x.cylinders != 8).forEach(element -> {
-			System.out.println(element.toString());
+			System.out.println(element.cylinders);
 		});
 		
 		System.out.print("\n\n=== Toyotas ===\n");
 		data.stream().filter(x -> x.carName.contains("toyota")).forEach(element -> {
-			System.out.println(element.toString());
+			System.out.println(element.carName);
 		});;
 		
 	}
